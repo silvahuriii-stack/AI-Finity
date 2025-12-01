@@ -1,0 +1,26 @@
+# Digital Twin Accounting — Streamlit prototype
+
+Simple Streamlit prototype that:
+- Connects to Sanity via GROQ (HTTP)
+- Displays time series cashflow, lightweight forecast
+- Provides a quick "Digital Twin" simulator (price/volume/cost multipliers)
+- Allows running custom GROQ queries (for advanced users)
+
+## Setup (local)
+1. Clone repo
+2. Create virtualenv & install:
+   pip install -r requirements.txt
+3. Export env vars (optional if using public dataset):
+   export SANITY_PROJECT_ID=your_project_id
+   export SANITY_DATASET=production
+   export SANITY_TOKEN=your_write_or_read_token
+4. Run:
+   streamlit run streamlit_app.py
+
+## Deploy to Streamlit Cloud / Railway / Render
+- Push to GitHub.
+- On deployment platform, set the environment variables (SANITY_PROJECT_ID, SANITY_DATASET, SANITY_TOKEN) as Secrets.
+- Set the start command to: `streamlit run streamlit_app.py`
+
+## Notes
+- This is a prototype. Untuk production: tambahkan pagination, proper error handling, rate limit handling, auth, dan validasi query.
